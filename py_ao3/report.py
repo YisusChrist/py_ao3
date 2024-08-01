@@ -1,6 +1,7 @@
 from typing import Any
 
 import matplotlib.pyplot as plt
+from rich import box
 from rich.table import Table
 
 
@@ -63,7 +64,7 @@ def print_top_table(data: dict[str, int], title: str, top: int) -> Table:
         data.items(), key=lambda x: x[1], reverse=True
     )
     top_data: list[tuple[str, int]] = sorted_data[:top]
-    table = Table()
+    table: Table = create_empty_table()
     table.add_column(title, style="cyan")
     table.add_column("Frequency", style="magenta")
     if title == "authors":
@@ -88,7 +89,7 @@ def print_top_table_stories(
         reverse=True,
     )
     top_stories: list[dict[str, Any]] = sorted_stories[:top]
-    table = Table()
+    table: Table = create_empty_table()
     table.add_column("Title", style="cyan")
     table.add_column("Rating", style="magenta")
     table.add_column("Author", style="yellow")
@@ -104,3 +105,13 @@ def print_top_table_stories(
         )
 
     return table
+
+
+def create_empty_table() -> Table:
+    return Table(
+        show_edge=False,
+        show_header=True,
+        expand=True,
+        row_styles=["none", "dim"],
+        box=box.SIMPLE,
+    )
