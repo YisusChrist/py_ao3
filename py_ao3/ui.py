@@ -12,12 +12,8 @@ from py_ao3.consts import AUTHOR, CSS_PATH, GITHUB
 from py_ao3.consts import __desc__ as DESC
 from py_ao3.consts import __version__ as VERSION
 from py_ao3.file_parse import extract_stories, get_file_path
-from py_ao3.report import (
-    count_frequencies,
-    print_top_table,
-    print_top_table_stories,
-    print_histogram,
-)
+from py_ao3.report import (count_frequencies, print_histogram, print_top_table,
+                           print_top_table_stories)
 
 
 class QuitScreen(ModalScreen):
@@ -68,6 +64,7 @@ class AO3ReportApp(App):
     BINDINGS = [
         ("q", "request_quit", "Quit"),
         ("t", "app.toggle_dark", "Toggle Dark mode"),
+        ("s", "app.screenshot()", "Screenshot"),
     ]
 
     def __init__(self):
@@ -144,23 +141,19 @@ class AO3ReportApp(App):
         if report_type_str == "Select.BLANK":
             output_widget.write(f"Invalid report type: {report_type}")
         elif report_type == "rating":
-            output_widget.write("Generating Top Stories by Rating...")
             self.print_top_table_stories(self.stories, sort="rating", top=top_n)
         elif report_type == "words":
-            output_widget.write("Generating Top Stories by Words...")
             self.print_top_table_stories(self.stories, sort="words", top=top_n)
         elif (
             report_type == "characters"
             or report_type == "series"
             or report_type == "authors"
         ):
-            output_widget.write(f"Generating Top {report_type_str}...")
             self.print_top_table(
                 self.frequencies[report_type_str], report_type_str, top=top_n
             )
         elif report_type_str.startswith("hist_"):
             selection: str = report_type_str[5:]
-            output_widget.write(f"Generating Histogram of {selection}...")
             data: dict[Any, int] = self.frequencies[selection]
             print_histogram(data, selection)
         else:
