@@ -8,12 +8,16 @@ from textual.screen import ModalScreen
 from textual.widgets import (Button, Footer, Header, Input, Label, RichLog,
                              Select)
 
-from py_ao3.consts import AUTHOR, GITHUB
+from py_ao3.consts import AUTHOR, CSS_PATH, GITHUB
 from py_ao3.consts import __desc__ as DESC
 from py_ao3.consts import __version__ as VERSION
 from py_ao3.file_parse import extract_stories, get_file_path
-from py_ao3.report import (count_frequencies, print_top_table,
-                           print_top_table_stories)
+from py_ao3.report import (
+    count_frequencies,
+    print_top_table,
+    print_top_table_stories,
+    print_histogram,
+)
 
 
 class QuitScreen(ModalScreen):
@@ -60,8 +64,11 @@ class AboutDialog(ModalScreen):
 
 
 class AO3ReportApp(App):
-    CSS_PATH = "css/app.css"  # Link to the CSS file
-    BINDINGS = [("q", "request_quit", "Quit")]
+    CSS_PATH = CSS_PATH  # Link to the CSS file
+    BINDINGS = [
+        ("q", "request_quit", "Quit"),
+        ("t", "app.toggle_dark", "Toggle Dark mode"),
+    ]
 
     def __init__(self):
         super().__init__()

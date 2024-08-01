@@ -13,3 +13,5 @@ PACKAGE: str | None = __package__
 
 ARROW_SYMBOL = "‚Üí"  # "→"
 CROSS_SYMBOL = "√ó"  # "×"
+
+CSS_PATH = "css/app.css"
