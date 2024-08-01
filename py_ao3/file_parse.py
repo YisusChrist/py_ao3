@@ -7,6 +7,8 @@ import chardet
 from rich import print
 from rich.markdown import Markdown
 
+from py_ao3.consts import ARROW_SYMBOL, CROSS_SYMBOL
+
 
 def process_line(line: str) -> str:
     if not line.startswith("- by") or line.startswith("- by ["):
@@ -15,8 +17,8 @@ def process_line(line: str) -> str:
     print(f"Original: {line}")
 
     url_format = "[{}](https://archiveofourown.org/users/{}/pseuds/{})"
-    prefix = "- by "
-    suffix = " ‚Üí "
+    prefix: str = "- by "
+    suffix: str = f" {ARROW_SYMBOL} "
     try:
         author, size = line.split(prefix)[1].split(suffix)
     except ValueError:
@@ -81,8 +83,8 @@ def extract_stories(file: str | Path) -> list[dict[str, Any]]:
         # Use regular expressions to find the other details
         characters_match = re.search(r"- (.*?) \((.*?)\)", section)
         author_match = re.search(r"- by \[(.*?)\]\(.*?\)", section)
-        words_match = re.search(r" ‚Üí (.*?) words", section)
-        rating_comment_match = re.search(r"- (.*?)/100, (.*)", section)
+        words_match = re.search(rf" {ARROW_SYMBOL} (.*?) words", section)
+        rating_comment_match = re.search(r"- (.*?)/100(.*)", section)
 
         if characters_match and author_match and rating_comment_match:
             characters = characters_match.group(1)
@@ -92,7 +94,7 @@ def extract_stories(file: str | Path) -> list[dict[str, Any]]:
             rating = rating_comment_match.group(1)
             comment = rating_comment_match.group(2)
 
-            characters_list: list[str] = characters.split(" √ó ")
+            characters_list: list[str] = characters.split(f" {CROSS_SYMBOL} ")
             # Create a dictionary for the story
             try:
                 story: dict[str, Any] = {

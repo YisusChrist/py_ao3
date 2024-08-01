@@ -1,6 +1,6 @@
 from rich.traceback import install
 
-from py_ao3.report import AO3ReportApp
+from py_ao3.ui import AO3ReportApp
 
 
 def main() -> None:

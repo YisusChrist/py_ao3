@@ -10,3 +10,6 @@ __desc__: str = metadata.metadata(__package__ or __name__)["Summary"]
 AUTHOR: str = metadata.metadata(__package__ or __name__)["Author"]
 GITHUB: str = metadata.metadata(__package__ or __name__)["Home-page"]
 PACKAGE: str | None = __package__
+
+ARROW_SYMBOL = "‚Üí"  # "→"
+CROSS_SYMBOL = "√ó"  # "×"
