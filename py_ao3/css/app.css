@@ -54,23 +54,19 @@ Button.primary {
     color: $text; /* Ensure the text color contrasts with the background */
 }
 
-/*
-.input-group Input , Select{
+.input-group Input , Select {
     width: 50%;
-    margin-right: 20;
-}
-*/
-.input-group Select,
-.input-group Input {
-    margin-right: 10; /* Optional: Adds space between input elements */
 }
 
-.Horizontal {
-    margin-bottom: 0; /* oves gap between containers */
+Horizontal {
+    height: auto;
 }
 
 .quit-button {
     background: red;
     color: white;
 }
-
+#generate_report {
+    background: green;
+    color: white;
+}
