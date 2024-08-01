@@ -31,6 +31,8 @@ def count_frequencies(stories: list[dict[str, Any]]) -> dict[str, dict[Any, int]
         # Update the authors count
         add_to_frequencies(frequencies, "authors", story["author"])
 
+        if not story["characters"]:
+            continue
         # Update characters count
         for character in story["characters"]:
             add_to_frequencies(frequencies, "characters", character)
