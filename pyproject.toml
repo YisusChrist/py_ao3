@@ -9,9 +9,9 @@ repository = "https://github.com/YisusChrist/py_ao3"
 
 [tool.poetry.dependencies]
 python = "^3.12,<3.13"
-chardet = "5.2.0"
-matplotlib = "3.9.1"
-rich = "13.7.1"
+chardet = "^5.2.0"
+matplotlib = "^3.9.1"
+rich = "^13.7.1"
 textual = "^0.74.0"
 
 [tool.poetry.dev-dependencies]
