@@ -146,7 +146,7 @@ As you may see, Markdown syntax is used to format the text file, so the program 
 
 ### Example of execution
 
-![demo](https://i.imgur.com/d5PHqBO.gif)
+https://github.com/user-attachments/assets/2ce55013-a285-40dc-9843-5e5fa9892439
 
 ## Contributors
 
