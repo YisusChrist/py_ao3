@@ -1,19 +1,12 @@
 name: Labeler
 
 on:
-    push:
-        branches:
-            - main
-            - master
+  push:
+    branches:
+      - main
+      - master
 
 jobs:
-    labeler:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Check out the repository
-              uses: actions/checkout@v4
-
-            - name: Run Labeler
-              uses: crazy-max/ghaction-github-labeler@v5.0.0
-              with:
-                  skip-delete: true
+  labeler:
+    uses: YisusChrist/github-actions-workflows/.github/workflows/labeler.yml@main
+    secrets: inherit
