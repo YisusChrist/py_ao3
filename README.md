@@ -5,7 +5,7 @@
     <a href="https://github.com/YisusChrist/py_ao3/forks">
         <img src="https://img.shields.io/github/forks/YisusChrist/py_ao3?color=171b20&label=Forks%20%20&logo=git&labelColor=f1cf8a&logoColor=ffffff">&nbsp;&nbsp;&nbsp;
     </a>
-    <a href="https://github.com/YisusChrist/py_ao3/">
+    <a href="https://github.com/YisusChrist/py_ao3/stargazers">
         <img src="https://img.shields.io/github/stars/YisusChrist/py_ao3?color=171b20&label=Stargazers&logo=octicon-star&labelColor=70a5eb">&nbsp;&nbsp;&nbsp;
     </a>
     <a href="https://github.com/YisusChrist/py_ao3/actions">
@@ -50,7 +50,7 @@
 - [Usage](#usage)
   - [Example of execution](#example-of-execution)
 - [Contributors](#contributors)
-  - [How do I contribute to py\_ao3?](#how-do-i-contribute-to-py_ao3)
+  - [How do I contribute to py_ao3?](#how-do-i-contribute-to-py_ao3)
 - [License](#license)
 - [Credits](#credits)
 
@@ -60,11 +60,11 @@
 
 Here's a breakdown of the packages needed and their versions:
 
--   [poetry](https://pypi.org/project/poetry) >= 1.7.1 (_only for manual installation_)
--   [chardet](https://pypi.org/project/chardet) >= 5.2.0
--   [matplotlib](https://pypi.org/project/matplotlib) >= 3.9.1
--   [rich](https://pypi.org/project/rich) >= 13.7.1
--   [textual](https://pypi.org/project/textual) >= 0.74.0
+- [poetry](https://pypi.org/project/poetry) >= 1.7.1 (_only for manual installation_)
+- [chardet](https://pypi.org/project/chardet) >= 5.2.0
+- [matplotlib](https://pypi.org/project/matplotlib) >= 3.9.1
+- [rich](https://pypi.org/project/rich) >= 13.7.1
+- [textual](https://pypi.org/project/textual) >= 0.74.0
 
 > [!NOTE]
 > The software has been developed and tested using Python `3.12.1`. The minimum required version to run the software is Python 3.6. Although the software may work with previous versions, it is not guaranteed.
@@ -97,22 +97,22 @@ If you prefer to install the program manually, follow these steps:
 
 1. Download the latest version of [py_ao3](https://github.com/YisusChrist/py_ao3) from this repository:
 
-    ```bash
-    git clone https://github.com/YisusChrist/py_ao3
-    cd py_ao3
-    ```
+   ```bash
+   git clone https://github.com/YisusChrist/py_ao3
+   cd py_ao3
+   ```
 
 2. Install the package:
 
-    ```bash
-    poetry install
-    ```
+   ```bash
+   poetry install
+   ```
 
 3. Run the program:
 
-    ```bash
-    poetry run py_ao3
-    ```
+   ```bash
+   poetry run py_ao3
+   ```
 
 ### Uninstall
 
@@ -133,7 +133,7 @@ py_ao3
 In order to use the program, you must have a valid text file that contains the information of the stories you want to process. The file must be in the following format:
 
 ```md
-*[TITLE]*
+_[TITLE]_
 
 - [CHARACTERS] ([SERIES])
 
@@ -154,13 +154,13 @@ https://github.com/user-attachments/assets/2ce55013-a285-40dc-9843-5e5fa9892439
 
 ### How do I contribute to py_ao3?
 
-Before you participate in our delightful community, please read the [code of conduct](.github/CODE_OF_CONDUCT.md).
+Before you participate in our delightful community, please read the [code of conduct](https://github.com/YisusChrist/.github/blob/main/CODE_OF_CONDUCT.md).
 
 I'm far from being an expert and suspect there are many ways to improve – if you have ideas on how to make the configuration easier to maintain (and faster), don't hesitate to fork and send pull requests!
 
 We also need people to test out pull requests. So take a look through [the open issues](https://github.com/YisusChrist/py_ao3/issues) and help where you can.
 
-See [Contributing](.github/CONTRIBUTING.md) for more details.
+See [Contributing Guidelines](https://github.com/YisusChrist/.github/blob/main/CONTRIBUTING.md) for more details.
 
 ## License
 
